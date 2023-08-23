@@ -1,0 +1,62 @@
+.body{
+  margin: 0;
+  padding: 0; /*Resetea margen y padding*/
+  background: #2f3542; /*color de fondo de la página*/
+  height: 100vh; /*Alto de la pantalla*/
+  display: flex; /*Pone a los elementos dentro del contenedor en flex*/
+  align-items: center; /*Alinea los elementos al centro*/
+  justify-content: center; /*Centra el contenido*/
+}
+
+.cargar{
+  width: 200px; /*Tamaño del circulo*/
+  height: 200px; /*Tamaño del circulo*/
+  box-sizing: border-box; /*Calcula el ancho y alto del elemento*/
+  border-radius: 50%; /*Lo que da la forma al circulo*/
+  border-top: 10px solid #e74c3c; /*Color de borde 1*/
+  position: relative; /*Posición relativa*/
+  animation: a1 2s linear infinite; /*El efecto de la animación del circulo*/
+}
+
+.cargar::before,.cargar::after{
+  content: ''; /*Hace que se muestren otras dos lineas para completar el circulo*/
+  width: 200px; /*Tamaño del circulo*/
+  height: 200px; /*Tamaño del circulo*/
+  position: absolute; /*Posición absoluta de los elementos*/
+  left: 0; /*Hasta la izquierda*/
+  top: -10px; /*Margen negativo*/
+  box-sizing: border-box; /*Calcula el ancho y alto del elemento*/
+  border-radius: 50%; /*Lo que da la forma al circulo*/
+}
+
+.cargar::before{
+  border-top: 10px solid #e67e22; /*Color del borde 2*/
+  transform: rotate(120deg); /*Animacion de rotación*/
+}
+
+.cargar::after{
+  border-top: 10px solid #3498db;  /*Color del borde 3*/
+  transform: rotate(240deg); /*Animacion de rotación*/
+}
+
+.cargar span{
+  position: absolute; /*Posición absoluta*/
+  width: 200px; /*Tamaño del circulo*/
+  height: 200px; /*Tamaño del circulo*/
+  color: #fff; /*Color del texto dentro del circulo*/
+  text-align: center; /*Centra el texto*/
+  line-height: 200px; /*Tamaño del circulo*/
+  animation: a2 2s linear infinite; /*Animación del circulo*/
+}
+
+@keyframes a1 {
+  to{
+    transform: rotate(360deg); /*Rotación positiva*/
+  }
+}
+
+@keyframes a2 {
+  to{
+    transform: rotate(-360deg); /*Rotación negativa*/
+  }
+}

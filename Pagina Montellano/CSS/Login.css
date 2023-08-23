@@ -1,0 +1,56 @@
+body{
+  margin: 0; 
+  padding: 0; /*Resetea el padding y margin*/
+  font-family: "arial"; /*Tipo de letra del formulario*/
+  background-image: url(https://images2.alphacoders.com/458/458791.jpg); /*Color de fondo del formulario*/
+  background-attachment: fixed; /*La imagen se queda fija y se puede ver como un tipo "animación cuando se baja la pantalla"*/
+  background-position: center; /*La imagen siempre se posiciona al centro*/
+  background-size: cover; /*Toma la resolución original de la imagen sin reescalados*/
+}
+.contenedor{
+  width: 50%; /*Tamaño de todo el formulario*/
+  position: absolute; /*Para que el formulario este centrado*/
+  top: 50%; /*Centrado vertical*/
+  left: 50%; /*Centrado horizontal*/
+  transform: translate(-50%,-50%); /*Complementa el centrado del formulario*/
+  color: white; /*Color del texto inicio de sesión*/
+}
+.contenedor h1{
+  float: left; /*Permite que la linea que se encuentra abajo del texto sea del mismo tamaño al texto*/
+  font-size: 40px; /*Tamaño del texto*/
+  border-bottom: 6px solid #4caf50; /*Color del borde en la parte inferior*/
+  margin-bottom: 50px; /*Separación hacia abajo*/
+  padding: 13px 0; /*Separación de la linea del texto*/
+}
+.info{
+  width: 70%; /*Tamaño del contenedor de texto del formulario*/
+  overflow: hidden; /*Para que las lineas inferiores de los campos de texto se queden debajo*/
+  padding: 8px 0; /*Separación interna*/
+  margin: 8px 0; /*Margen en entre cada contenedor*/
+  border-bottom: 1px solid #4caf50; /*Linea que se encuentra debajo de los campos*/
+}
+
+::placeholder { color: white; } /*Color de la marca de agua en el formulario*/
+
+
+.info input{
+  border: none; /*Quita los bordes*/
+  outline: none; /*Quita el contorno*/
+  background: none; /*Quita el fondo*/
+  color: white; /*Color del texto */
+  font-size: 18px; /*Tamaño de letra del usuario y clave*/
+  width: 80%; /*Tamaño de los campos usuario y clave*/
+  float: left; /*Flotente a la izq*/
+  margin: 0 10px; /*Margen hacia la izq para el texto*/
+}
+
+.btn{
+  width: 70%; /*Tamaño del botón*/
+  background: linear-gradient(45deg, #1c4bb3 , #c94090); /*Degradacion del color de fondo del botón*/
+  border: none; /*Quita los bordes del botón*/
+  color: white; /*Color de texto del botón*/
+  padding: 10px; /*Paddin del botón*/
+  font-size: 18px; /*Tamaño del texto del botón*/
+  cursor: pointer; /*Cuando se pase el mouse se pone la mano*/
+  margin: 12px 0; /*Margen del botón*/
+}

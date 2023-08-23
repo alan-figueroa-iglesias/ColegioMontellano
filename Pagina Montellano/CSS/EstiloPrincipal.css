@@ -1,0 +1,451 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; /*Resetea los margenes y el padding además de poner una instucción para que los elemntos de mis cajas no se desborden*/
+}
+body{
+	font-family: "arial"; /*Tipo de letra de toda la página inicio*/
+	font-size: 16px; /*Tamaño de letra*/
+}
+	body::-webkit-scrollbar {
+		width: 7px; /*Tamaño de la barra scroll*/
+		background: #000; /*Color de fondo de la barra scroll*/
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: rgba(255,255,255,0.1); /*Color de la barra scroll*/
+		border-radius: 5px; /*Redondea la barra*/
+	}
+
+.header2{
+	width: 100%; /*Ancho de la imagen*/
+	height: 100vh; /*Alto de la imagen*/
+	background-image: url(https://wallpaperplay.com/walls/full/b/9/7/197652.jpg);
+							/*Imagen de fondo*/
+	background-attachment: fixed; /*La imagen se queda fija y se puede ver como un tipo "animación cuando se baja la pantalla"*/
+	background-position: center; /*La imagen siempre se posiciona al centro*/
+	background-size: cover; /*Toma la resolución original de la imagen sin reescalados*/
+	position: relative; /*Sirve para que el recorte que se especifica mas adelante sea respetado*/
+	overflow: hidden; /*Para que se quede al raz del menu celular*/
+	color: #fff; /*Color del título y subtítulo*/
+	text-align: center; /*Para que el texto este centrado*/
+	z-index: 1;
+}
+
+.header2 .texto{
+	margin-top: 25vh; /*Margen del texto en la parte superiror*/
+}
+
+.header2 .titulo{
+	font-size: 85px; /*Tamaño del título*/
+}
+
+.header2 .subtitulo{
+	font-size: 42px; /*Tamaño del subtítulo*/
+	font-weight: 300; /*El grosor del subtítulo*/
+	margin-bottom: 32px; /*Margen hacia abajo*/
+}
+
+.header2 .boton{
+	display: inline-block; /*Pone al boton en bloque-linea */
+	padding: 15px; /*Separacion interna de los lados del botón*/
+	width: 150px; /*Tamaño del botón*/
+	border: 1px solid #fff; /*Borde del botón*/
+	color: #fff; /*Color del texto del botón*/
+	font-size: 19px; /*Tamaño de letra del botón*/
+	text-align: center; /*Centrado del texto*/
+	text-decoration: none; /*Quita las decoraciones*/
+	border-radius: 16px; /*Hace los bordes redondos*/
+}
+
+.sesgoabajo{	
+	position: absolute; /*Pone al div que va a cortar la imagen en posición*/
+	bottom: 0; /*Pone en posición al corte*/
+	left: 0; /*Pone en posición al corte*/
+	border-width: 0; /*Pone en posición al corte*/
+	border-width: 0 0 35vh 100vw; /*Indica la posición del corte*/
+	border-style: solid; /*Estilo de borde*/
+	border-color: transparent transparent #fff transparent; /*#fff es el color blanco de la parte de abajo que da el efecto de cortado a la imagen*/
+}
+
+.galeria .sesgoarriba{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	border-width: 0;
+	border-width: 35vh 100vw 0 0;
+	border-style: solid;
+	border-color: #fff transparent transparent transparent; /*Este bloque hace lo mismo que el anteriro, solo que con la 
+													diferencia de que pone el corte en la parte superior*/
+}
+
+.contenedor{
+	width: 100%; /*Tamaño de mi contenedor*/
+	max-width: 1000px; /*Tamaño máximo de mi contenedor*/
+	margin: auto; /*Centra mi contenedor*/
+	overflow: hidden; /*El contenido es recortado para que no se desborde*/ 
+	padding: 52px 0; /*Separación del contenedor de la parte superior*/
+}
+
+.sobre-nosotros{
+	text-align: center; /*Centra el texto*/
+	font-size: 56px; /*Tamaño del texto*/
+	margin-bottom: 10px; /*Margen del texto en la parte inferior*/
+	font-weight: 600; /*Grosor del texto*/
+	height: auto; /*Altura del texto*/
+}
+
+.slogan{
+	font-size: 24px; /*Tamaño del texto*/
+	font-weight: 300; /*Grosor del texto*/
+	text-align: center; /*Centra el texto*/
+	margin-bottom: 24px; /*Margen del texto hacia bajo*/
+}
+
+.parrafo{
+	margin-bottom: 13px; /*Margen del los parrafos hacia abajo*/
+	text-align: justify; /*Justifica el texto*/
+	line-height: 24px; /*Interlineado del texto*/
+	color: #000; /*Color del parrafo que se encuentra debajo de sobre nosotros*/
+}
+
+.acerca-de .boton{
+	display: inline-block; /*Pone a los elemento en linea*/
+	padding: 15px; /*Separación interna de los elementos*/
+	width: 160px; /*Ancho del botón*/
+	font-weight: 300; /*Grosor del texto*/
+	border: 1px solid #000; /*Borde y color del botón*/
+	color: #000; /*Color del texto*/
+	font-size: 25px; /*Tamaño del texto*/
+	text-align: center; /*Alineación del texto*/
+	text-decoration: none; /*Quita las decoraciones por defecto*/
+	border-radius: 16px; /*Redondea las esquinas del botón*/
+	margin-top: 24px;  /*Margen superior del botón*/
+}
+
+.galeria{
+	width: 100%; /*Tamaño del contenedor galería*/
+	height: 500px; /*Alto del contenedor*/
+	overflow: hidden; /*El contenido es recortado para que no se desborde*/ 
+	display: flex; /*Muestra las cinco imagenes*/
+	position: relative; /*Hace posible el corte en la parte superiro del contenedor galería*/
+	z-index: -1; /*Para que no tape la barra del menú celular*/
+}
+
+.imagenes{
+	width: 20%; /*Ancho de las imagenes en el contenedor*/
+	height: 500px; /*Alto de las imagenes en el contenedor*/
+	overflow: hidden; /*El contenido es recortado para que no se desborde*/ 
+	position: relative; /*Pone las imagenes en posición relativa*/
+}
+
+.imagenes img{
+	width: 100%; /*Ancho de las imagenes*/
+	height: 100%; /*Alto de las imagenes*/
+	object-fit: cover; /*Para que las imagenes se visualizen en pantalla de mejor manera*/
+}
+
+/*.encima{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+.encima h2{
+	position: relative;
+	top: 45%;
+	text-align: center;
+	color: #fff;
+}
+
+.encima div{
+	position: relative;
+	display: block;
+	top: 46;
+	width: 40px;
+	height: 5px;
+	background: #fff;
+	margin: auto;
+}Codigo para poner texto dentro de una imagen (la de enmedio) de las que se muestran en barra*/
+
+.cards{
+	width: 100%; /*Tamaño de caja donde se encuentran los logos*/
+	margin: auto; /*Margene auto*/
+	display: flex; /*Para que el contenedor de los logos se ubiquen en fila*/
+	flex-wrap: wrap; /*Los contenedores no se amontonen si la pantalla se hace más pequeña*/
+	justify-content: space-between; /*Para que haya un espacio entre caja y caja*/
+}
+
+.card{
+	margin: 20px 0; /*Margen superior de las imagenes con respector al contenedor*/
+	width: 30%; /*Ancho del contenedor*/
+	height: 250px; /*Alto del contenedor*/
+	text-align: center; /*Alineación del texto e imagenes*/
+	padding: 20px; /*Separación interna del contenedor*/
+	border: 1px solid; /*Borde de las imagenes*/
+	box-shadow: 0px 0px 6px 0px #000; /*Sombra para el contenedor*/
+}
+
+.cards img{
+	width: 140px; /*Ancho de las imagenes*/
+	height: 140px; /*Alto de las imagenes*/
+	object-fit: cover; /*Se respeta el tamaño original de las imagenes en el contenedor*/
+	border-radius: 10px; /*Bordes redondos de las imagenes*/
+}
+
+.fondo{
+	height: 900px; /*Altura del texto que se encuentra al casi final*/
+	position: relative; /*Pone en posición relativa*/
+	background-image: url(https://www.xtrafondos.com/wallpapers/resoluciones/15/montanas-rosas_1920x1080_1620.jpg); /*Imagen de fondo*/
+	overflow: hidden; /*El contenido es recortado para que no se desborde*/ 
+	background-attachment: fixed; /*La imagen se queda fija y se puede ver como un tipo "animación cuando se baja la pantalla"*/
+	background-position: center; /*La imagen siempre se posiciona al centro*/
+	padding-top: 130px; /*Pone a los elementos dentro del contenedor en una posición en pantalla para que puedan ser visualizados*/
+	z-index: -1; /*Para que no tape la barra del menú celular*/
+}
+
+.sesgoarriba{
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-width: 0;
+	border-width: 35vh 100vw 0 0;
+	border-style: solid;
+	border-color: #fff transparent transparent transparent; /*Este bloque hace lo mismo de  cortar la imagen como ya lo dije antes*/
+}
+
+.sesgoabajo-unico{
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-width: 0;
+	border-width: 0 0 35vh 100vw;
+	border-style: solid;
+	border-color: transparent transparent #2980b9 transparent; /*Este bloque hace lo mismo de  cortar la imagen como ya lo dije antes*/
+}
+
+.titulo-patrocinadores, .subtitulo-patrocinadores{
+	padding-top: 10px; /*Separación dentro del bloque en la parte superior*/
+	color: #fff; /*Color del texto de la penultima sección de la página*/
+	text-align: center; /*Centra el texto*/
+}
+
+.titulo-patrocinadores{
+	font-size: 56px; /*Tamaño de texto*/
+	margin-top: 48px; /*Margen en la parte superiror del texto*/
+}
+
+.subtitulo-patrocinadores{
+	font-size: 24px; /*Tamaño del texto*/
+	font-weight: 300; /*Grosor del texto*/
+	margin-bottom: 64px; /*Margen del texto en la parte inferior*/
+}
+
+.clientes{
+	display: flex; /*Pone a las últimas imagenes en linea*/
+	flex-wrap: wrap; /*Los contenedores no se amontonen si la pantalla se hace más pequeña*/
+	margin-bottom: 64px; /*Pone un margen en la parte inferior*/
+	width: 100%; /*Tamaño del contenedor ancho*/
+	justify-content: space-between; /*Para que haya un espacio entre caja y caja*/
+}
+
+.cliente{
+	width: 30%;/*Ancho del contenedor*/
+}
+
+.cliente img{
+	width: 100%; /*Ancho de la imagen*/
+}
+
+footer{
+	background: #2980b9; /*Color de fondo del footer*/
+	height: auto; /*Alto del footer*/
+}
+
+.titulo-footer, .subtitulo-footer{
+	color: #fff; /*Color de los textos en el footer*/
+	text-align: center; /*Alineación del texto al centro*/
+	font-weight: 400; /*Grosor del texto*/
+	font-size: 56px; /*Tamaño del texto*/
+}
+
+.subtitulo-footer{
+	font-size: 24px; /*Tamaño del texto secundario del footer*/
+	margin-bottom: 64px; /*Margen en la parte inferior del texto*/
+}
+
+form{
+	display: flex; /*Acomoda bien las cajas*/
+	width: 100%; /*Ancho de las cajas*/
+	justify-content: space-between; /*Para que haya un espacio entre caja y caja*/
+	flex-wrap: wrap; /*Los contenedores no se amontonen si la pantalla se hace más pequeña*/
+	margin: auto; /*Para centrar*/
+}
+
+input[type="text"], input[type="email"]{
+	display: inline-block; /*Las cajas se ponen en linea*/
+	width: 48%; /*Ancho de las cajas*/
+	padding: 13px; /*Separación interna de las cajas*/
+	border: none; /*Quita los bordes*/
+	color: #fff; /*Color del texto*/
+	background: rgba(37,39,33,0.7); /*Color de fondo de las cajas*/
+	margin-bottom: 16px; /*Margen superior*/
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
+	border-top: 5px solid rgb(255,255,255); /*Pone de color blanco la parte superior, cuando se selecciona para rellenar los datos del formulario*/
+}
+
+textarea{
+	display: block; /*Pone el área de texto del mensaje en bloque*/
+	width: 100%; /*Tamaño del área de texto*/
+	max-width: 100%; /*Tamaño máximo*/
+	min-width: 100%; /*Tamaño minimo*/
+	max-height: 200px; /*Altura máxima*/
+	min-height: 200px; /*Altura minima*/
+	background: rgba(37,37,33,0.7); /*Fondo del text area*/
+	padding: 13px; /*Separación interna de la caja*/
+	border: none; /*Quita los bordes*/
+	color: #fff; /*Color del texto al escribir*/
+	margin-bottom: 16px; /*Margen inferiro del text area*/
+}
+
+.btn{
+	width: 100%; /*Ancho del botón enviar*/
+	margin-top: 10px; /*Margen superior del botón*/
+	border-radius: 10px; /*Pone los bordes del botón redondeados*/ 
+	display: inline-block; /*Pone al botón en linea*/
+	padding: 20px 15px; /*Separación interna del botón*/
+	text-decoration: none;	/*Quita las decoraciones por defecto*/
+	border: 1px solid rgba(37,37,33,0.7); /*Para poner el borde al mismo color que el botón*/
+	color: white; /*Color del texto*/
+	background: rgba(37,37,33,0.7); /*Color de fondo del botón*/
+	font-size: 15px; /*Tamaño del texto*/
+}
+
+.btn:hover{
+	cursor: pointer; /*Al pasar el cursor por el botón la se pone una mano*/
+	background: #37B839; /*Color de fondo al pasar el mouse por el botón*/
+}
+
+@media screen and (max-width: 1040px){ /*Se ejecutará lo de dentro cuando la pantalla sea menor a 1021px*/
+	.card{
+		width: 40%; /*Ancho del contenedor*/
+		margin: auto; /*Margen par acentrar*/
+		margin-bottom: 30px; /*Margen en la parte inferior del contenedor*/
+	}
+
+	.header2 .titulo{
+		font-size: 75px; /*Tamaño del texto título*/
+	}
+
+	.fondo{
+		height: auto; /*Altura auto*/
+	}
+
+	.titulo-patrocinadores{
+		color: #fff; /*Color del texto*/
+		text-align: center; /*Alineación al centro*/
+		font-size: 40px; /*Tamaño del texto*/
+		padding-top: 10%;  /*Separación interna en la parte superior*/
+		margin-top: 10%; /*Margen superior*/
+	}
+
+	.subtitulo-patrocinadores{
+		padding: 30px; /*Separación interna del texto*/
+		text-align: center; /*Posiciona el texto al centro*/
+		font-size: 40px; /*Tamaño del texto*/
+	}
+
+	.especial{
+		color: transparent; /*Oculta el texto en pantalla*/
+	}
+
+	.clientes{
+		display: none; /*Oculta los elementos dentro del contenedor*/
+	}
+
+	.footer{
+		width: 90%; /*Tamaño del footer*/
+		margin: auto; /*Alineación al centro*/
+	}
+
+	
+	.header2 .titulo{
+		font-size: 80px; /*Tamaño del título*/
+	}
+
+	.header2 .subtitulo{
+		font-size: 25px; /*Tamaño del subtítulo*/
+	}
+
+	.parrafo{
+		width: 90%; /*Tamaño de los textos dentro de parrafo*/
+		margin: auto; /*Margen de los textos*/
+		padding: 20px;  /*Separación interna*/
+	}
+
+	.acerca-de .boton{
+		margin: 0; /*Posiciona mejor el botón*/
+		margin-left: 7.7%; /*Posición del botón*/
+	}
+}
+
+
+@media screen and (max-width: 595px){ /*Se ejecutará lo de dentro cuando la pantalla sea menor a 595x*//
+	.cards{
+		width: 100%; /*Tamaño del contenedor*/
+		flex-wrap: wrap; /*Cuando un elemento ya no cabe al lado este se baja*/
+	}
+	.card{
+		width: 60%; /*Ancho del contenedor*/
+		flex-wrap: wrap; /*Cuando un elemento ya no cabe al lado este se baja*/
+		margin: auto; /*Margen par acentrar*/
+		margin-bottom: 30px; /*Margen en la parte inferior del contenedor*/
+	}
+
+	.titulo-patrocinadores{
+		color: #fff; /*Color de texto*/
+		text-align: center; /*Alineación del texto*/
+		font-size: 35px; /*Tamaño del texto*/
+		padding-top: 10%; /*Separación interna superior*/
+		margin-top: 10%; /*Margen superior*/
+	}
+
+	.subtitulo-patrocinadores{
+		padding: 30px;	 /*Separación interna*/	
+		text-align: center; /*Alineación al centro del texto*/
+		font-size: 30px; /*Tamaño del texto*/
+	}
+	.footer{
+		width: 90%; /*Tamaño del contenedor*/
+		margin: auto; /*Margen auto*/
+	}
+
+	.header2 .texto{
+		margin-top: 50%; /*Margen superior*/
+	}
+
+	.header2 .titulo{
+		font-size: 70px; /*Tamaño de letra*/
+	}
+
+	.header2 .subtitulo{
+		font-size: 25px; /*Tamaño de letra*/
+	}
+
+	.acerca-de .boton{
+		margin: 0; /*Margen en cero ayuda a la posición*/
+		margin-left: 8%; /*Margen hacia la izq*/
+	}
+
+	.header2 .texto{
+		margin-top: 15vh; /*Margen superior en relación a la resolución*/
+	}
+}

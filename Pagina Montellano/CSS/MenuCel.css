@@ -1,0 +1,167 @@
+*{
+		margin: 0;
+		padding: 0;
+		font-family: 'arial'; /*Reseatea los margenes y el padding de la página
+							además de asignar un tipo de letra*/
+
+}
+@media screen and (max-width: 1040px) /*Instrucción que ejecutará lo que este dentro si la 
+								pantalla tiene de 1020 pixeles para abajo*/
+{
+	.menu-bar{
+		display: none; /*Oculta el texto "Menú y su icono"*/
+	}
+
+	header {
+		width: 100%; /*Tamaño del menú*/
+		position: absolute; /*Posición absoluta para que el menú no se oculte*/
+		z-index: 100; /*EL menú siempre se visualiza en pantalla*/
+	}
+
+	header nav {
+		background: #16a085; /*Color de fondo del menú principal*/
+		width: 100%; /*Tamaño de mi menú*/
+		margin: 0px auto; /*Margen superior y centrado en el menú*/
+	}
+
+	header nav ul {
+		list-style: none; /*Limpia el texto de los menus*/
+	}
+
+	header nav ul li {
+		display: inline-block; /*Pone las opciones del menú una seguida de la otra*/
+		position: relative; /*Pone a los submenus en bloque relativo del mismo tamaño*/
+	}
+
+	header nav ul li:hover {
+		background: #34495e; /*Color al seleccionar los menus en el celular*/
+	}
+
+	header nav ul li a {
+		color: #fff; /*Color del texto menú*/
+		display: block; /*Pone en bloques a las opciones del menú 
+							para que se muestren mejor*/
+		text-decoration: none; /*Quita las decoraciones del texto*/
+		padding: 20px; /*Sepación entre la propia caja del menú*/
+	}
+
+	header nav ul li a span {
+		margin-right: 10px; /*Separa las imagenes de su respectiva opción del menú*/
+	}
+
+	nav ul li a .flecha{
+		margin-left: 10px; /*Separa las flechas de su respectiva opción del menú*/
+	}
+
+	header nav ul li .subs {
+		display: none; /*Oculta los submenus*/
+		background: #333; /*Color de fondo de los submenus*/
+		position: absolute; /*Pone al menú en posición absoluta para que no se mueva
+								al pasar por un menú que tenga submenus*/
+		width: 100%; /*Tamaño de los submenus*/
+		z-index: 1000; /*Para que los submenus se muestren por encima de todo*/
+	}
+
+	header nav ul li:hover .subs {
+		display: block; /*Cuando se pase el cursor por encima de los menus con submenus
+								estos se mostrarán*/
+	}
+
+	header nav ul li .subs li { 
+		display: block; /*Hace que los submenus se muestren en bloques y así 
+							solo se vea uno por bloque*/
+		overflow: hidden; /*Para que el texto de los submenus no se salga de su contenedor*/
+		border-bottom: 1px solid rgba(255,255,255,0.5); /*Color del borde inferiro de los submenus*/
+	}
+
+	header nav ul li .subs li a {
+		display: block; /*Se pone en bloque los elementos seleccionados*/
+	} 
+
+	/*header nav ul li .subs li a span{
+		float: right;
+		position: relative;
+		top: 3px;
+		margin-rigth: 0;
+		margin-left: 10px;
+	} Código para poner en posición una imagen que quede a la derecha de los submenus*/
+
+	/*________________________________________________________*/
+
+	body {
+		padding-top: 80px; /*Espacio entre el menú y su encabezado*/
+	}
+
+	.menu-bar {
+		display: block; /*Se muestra el menú*/
+		width: 100%; /*Tamaño del menú en pantalla*/
+		position: fixed; /*Para que el menu se situe hasta arriba de la pantalla (quita el espacio de)*/
+		top: 0; /*Va en relación con la anterior y en esta coloca el menu hasta arriba*/
+		background: #16a085; /*Color de la barra menú*/
+	}
+
+	.menu-bar .bt-menu {
+		display: block; /*Pone al menu en un bloque para que rellene bien la parte
+						superior de la pantalla*/
+		padding: 20px; /*Separación del bloque menú */
+		color: #fff; /*Color del título del menú*/
+		overflow: hidden; /*Muestra de forma completa la barra menú*/
+		font-size: 25px; /*Tamaño de letra de la palabra "Menú"*/
+		font-weight: bold; /*Pone en negritas la anterior palabra*/
+		text-decoration: none; /*Quita las decoraciones por defecto del texto "Menú"*/
+	}
+
+	.menu-bar span {
+		float: right; /*Situa al icono del menú hasta la derecha*/
+		font-size: 40px; /*Tamaño del icono menú*/
+	}
+
+	header nav {
+		width: 100%; /*Tamaño del menu*/
+		height: calc(100% - 80px); /*Intrucción que sirve para que se calcule el tamaño del menú
+									y así se muestren todo sus elementos*/
+		position: fixed; /*Para que el menú se mantenga oculto*/
+		right: 100%; /*Oculta el menú*/
+		margin: 0; /*Margene del menú*/
+		overflow: scroll; /*Crea un scroll para que en las pantallas chicas se pueda desplazar por el menú*/
+		background: #1abc9c; /*Color de fondo del menú*/
+	}
+
+		header nav::-webkit-scrollbar {
+			width: 7px; /*Ancho de la barra scroll*/
+			background: #1abc9c; /*Color de fondo de la barra scroll*/
+
+		}
+
+		header nav::-webkit-scrollbar-thumb {
+			background: rgba(255,255,255,1); /*Color de la barra scroll*/
+			border-radius: 5px; /*Para poner los bordes de la barra scroll redondos*/
+		}
+
+	header nav ul li {
+		display: block; /*Pone a los elementos del menú en bloques situandolos uno abajo del otro*/
+		border-bottom: 1px solid rgba(255,255,255,0.5); /*Color de los bordes inferiores del los menus*/
+	}
+
+	header nav ul li a {
+		display: block; /*Pone en bloque a los elementos seleccionados*/
+	}
+
+	header nav ul li:hover .subs {
+		display: none;	/*Hace que los elementos del menú que contienen submenus no se 
+							muestren cuando el cursor pase por encima*/
+	}
+
+	header nav ul li .subs {
+		width: 100%; /*Tamaño de los submenus*/
+		position: relative; /*Para que los submenus no se sobrepongan a los menus que se encuentren por debajo*/
+	}
+
+	header nav ul li .subs li a{
+		margin-left: 50px; /*Espaciado hacia la izq. del texto que contiene los submenus*/
+	}
+
+	header nav ul li .flecha{
+		float: right; /*Posición de la flecha hasta la derecha de la pantalla*/
+	}
+}

@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'arial'; /*Reseatea los margenes y el padding de la página
+							además de asignar un tipo de letra*/
+}
+
+@media screen and (min-width: 1041px){ /*Instrucción que ejecutará lo que este dentro si la 
+								pantalla tiene de 1022 pixeles para arriba*/
+	header{
+	    width: 100%; /*Ancho de del menú*/
+	    overflow: hidden; /*Muestra una pequeña franja de color en los menus*/
+	    height: 150px; /*Altura de todo el menú*/
+	     /*Para que respete el acomo que anteriormente se le asigno*/
+	 	 position: fixed; /*Posición en absoluto para que la imagen de fonde se muestre hasta arriba*/
+		z-index: 100; /*Para que el menú siempre se visualize por encima de la imagen*/
+	}
+
+	body::-webkit-scrollbar {
+		width: 12px; /*Tamaño de la barra scroll*/
+		background: #1abc9c; /*Color de fondo de la barra scroll*/
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: #ecf0f1); /*Color de la barra scroll*/
+		border-radius: 5px; /*Redondea la barra*/
+	}
+
+	nav ul li a .flecha{
+		display: none; /*Instrucción que sirve para ocultar las flechas que se muestran en el menú celular*/
+	}
+
+	nav{
+		top: -20px; /*Oculta los iconos respectivamente a su menú*/
+	    position: absolute; /*Los pone en posición absoluta para que solo se pueda
+	    					ver una franja del bloque de color*/
+	    left:0;
+	    /*Entre las dos centran el menú en pantalla*/
+	    right:0;
+		margin: 20px auto; /*Pone margenes en la parte superior y centra*/
+		width: 100%; /*Tamaño de expansión del menú*/
+	}
+
+	nav ul{
+		list-style: none; /*Quita los estilos por defecto*/
+	}
+
+	nav ul {  /*Los ul que estan directamente despues del nav 
+		serán modificados (osea los principales)*/
+		display: table; /*Hace que ocupe todo el tamaño que se asignó al menú*/
+		width: 100%; /*Otro tipo de tamaño del menú*/
+		background: #16a085; /*COLOR del menú*/
+		position: relative; /*Pone en posición relativa a lo seleccionado*/
+	}
+
+	nav ul li {
+		display: table-cell; /*Todos los elementos li que cumplan la anterior condición anterior 
+		tendrán un posición en la tabla celda para que midan lo mismo*/	
+	}
+
+	/*Submenus*/
+	nav ul li:hover > ul { 
+		display: block; /*Pone en bloque a los submenus*/
+		height: 100%; /*Alto de los submenus*/		
+	}
+
+	nav ul li ul {
+		display: block; /*Pone a los elementos en bloque*/
+		position: absolute; /*Pone a los elementos en posición absoluta*/
+		background: #1abc9c; /*COLOR de fondo de los submenus*/
+		left: 0; /*Margen 0 hacia la izq*/
+		right: 0; /*Margen cero hacia arriba*/
+		overflow: hidden; /*Para que se quede al raz el contenedor*/
+		height: 0%; /*Altura*/
+		-webkit-transition: all .3s ease; /*Es la animación del menú*/
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+	}
+
+	nav ul li a {
+		color: #FFF; /*COLOR del texto del menú*/
+		display: block; /*Pone a los elementos en bloque*/
+		line-height: 20px; /*Interlineado del texto*/
+		padding: 20px; /*Separación interna de los elementos*/
+		position: relative; /*Pone en posición relativa a los elementos*/
+		text-align: center; /*Alineación al centro del texto*/
+		text-decoration: none; /*Quita las decoraciones por defecto*/
+		/*Es la animación que se usa para mostrar en pantalla las imagenes referentes a lo 
+		que se halla seleccionado en el menú*/
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+	}
+
+	nav ul li ul li a:hover{ 
+		background: #34495e; /*COLOR de los submenus al ser seleccionados*/
+	} 	
+
+	nav ul li a span {
+		display: block; /*Pone a los elementos en bloque*/
+		height: 100%; /*Altura de los bloques del menú*/
+		width: 100%; /*Ancho de los bloques del menú*/
+		left: 0; /*Oculta los bloques e imagenes de ser mostrados sobre el menú*/
+		position: absolute; /*Complementa a la instrucción anterior*/
+		top: -55px; /*Deja la pequeña franja de color que se observa en pantalla arriba de cada menú*/
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+		/*Animación al pasar el cursor por los menus*/
+	}
+
+	nav ul li a span .icon {
+		display: block; /*Pone a los iconos en bloque*/
+		line-height: 60px; /*Posiciona a los iconos al centro del bloque*/
+	}
+
+	nav ul li a:hover span {
+		top: 0; /*Muestra a los iconos al pasar el cursor por el menú*/
+	}
+
+	/*Colores que se muestran en el menú cuando se hace la animación*/
+	nav ul li a .uno{
+		background: #F8B195; 
+	}
+	nav ul li a .dos{
+		background: #F67280; 
+	}
+	nav ul li a .tres{
+		background: #C06C84; 
+	}
+	nav ul li a .cuatro{
+		background: #6C5B7B; 
+	}
+	nav ul li a .cinco{
+		background: #355C7D; 
+	}
+	nav ul li a .seis{
+		background: #363636; 
+	}
+	nav ul li a .siete{
+		background: #45ADA8; 
+	}	
+	nav ul li a .sesion{
+		background: #2ECC71; 
+	}	
+
+	h1, .menu-bar, .icon-menu{
+		
+		display: none; /*Oculta el texto "Menú y su icono"*/
+	}
+}

@@ -1,0 +1,76 @@
+header{
+	position: relative; /*Pone al menú en ralativo para que siempre se quede arriba*/
+}
+.contenedor {
+	width: 45%; /*Tamaño del formulario*/
+	height: auto; /*Alto del formulario*/
+	background-color: #EFEFEF; /*Color de fondo del formulario*/
+	margin: 0 auto; /*Centra el formulario*/
+ 	padding-bottom: 20px; /*Deja un espacio luego del botón*/
+ }
+
+.titulo {
+	width: 100%; /*Tamaño que abarca todo el título*/
+	text-align: center; /*Centra el texto*/
+	margin-bottom: 10px;/*Separa el texto de los input*/
+	padding: 35px 0 20px; /*Espacio entre el texto y los campos*/
+	border-top: solid 7px #2980b9; /*Color de borde que se encuentra por arriba del texto*/
+  }
+
+.titulo h2 {
+ 	color: #CAC8C8; /*Color del texto primario*/
+	font-size: 50px; /*Tamaño del texto*/
+}
+
+h2 span {
+	color: #2980b9; /*Color del texto secundario*/
+}
+
+.formulario {
+	padding: 0 3rem; /*Tamaño de los input respecto a sus bordes laterales*/
+	display: flex; /*Para que los input queden debajo del otro*/
+	flex-direction: column; /*Mantienen en orden todo los input*/
+ }
+
+.btn_form {
+ 	margin-top: 30px /*Separación del botón de la parte superior respecto a los input*/
+}
+
+.input, .btn{
+	background-color: transparent; /*Quita el color de los input*/
+	padding: 10px; /*Espacio de caja de los input*/
+	margin: 10px 0; /*Margen de los input*/
+	border: none; /*Quita los bordes*/
+	border-bottom: solid #C8C8C8 3px; /*Pone un borde en la parte inferiro de cada input y les asigna un color y grosor*/
+	transition: all 0.5s; /*Efecto tipo animación al pasar de un input a otro*/
+}
+
+.input:focus {
+	outline: 0px; /*Cuando un input tiene el focus este quita los bordes*/
+	border-bottom: solid #2980b9 .2rem; /*El color cambia del borde inferior*/
+
+}
+
+.btn{
+	width: 100%; /*Tamaño del boton*/
+	border:none; /*Quita los bordes del botón*/
+ 	background-color: #31B1E5; /*Color de fondo del boton*/
+	color: white; /*Color de texto del botón*/
+	font-size: 15px; /*Tamaño de letra del botón*/
+	padding: 10px; /*Espaciado del botón*/
+}
+ 
+.btn:hover {
+	background-color: #4C9ED9; /*Cuando se pasa el mouse por encima del botón este cambia*/
+}
+
+@media screen and (max-width: 1040px){ /*Instrucción que ejecutará lo que este dentro si la 
+								pantalla tiene de 1020 pixeles para abajo*/
+	.contenedor{
+		width: 60%; /*Tamaño del contenedor cambia*/
+		 margin-top: 5%; /*Margen superior del contenedor*/
+ 	}
+ 	.titulo h2 {
+ 		font-size: 45px; /*Tamaño del texto cambia*/
+	}
+}
